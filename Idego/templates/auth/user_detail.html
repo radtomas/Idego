@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>User {{ user.username }}</h1>
+
+<a href='{% url "companies:user-edit" pk=user.id %}' class="btn btn-primary">Edit User</a>
+<a href='{% url "companies:user-delete" pk=user.id %}' class="btn btn-danger">Remove User</a>
+
+<table>
+    <tr>
+        <td>First name: </td>
+        <td>{{ user.first_name }}</td>
+    </tr>
+    <tr>
+        <td>Last name: </td>
+        <td>{{ user.last_name }}</td>
+    </tr>
+    <tr>
+        <td>Email: </td>
+        <td>{{ user.email }}</td>
+    </tr>
+    <tr>
+        <td>Staff: </td>
+        <td>{{ user.is_staff }}</td>
+    </tr>
+    <tr>
+        <td>User Permissions: </td>
+        <td>
+            <ul>
+            {% for perm in user.get_all_permissions %}
+                <li>{{ perm }}</li>
+            {% endfor %}
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Date joined: </td>
+        <td>{{ user.date_joined }}</td>
+    </tr>
+    <tr>
+        <td>Last login: </td>
+        <td>{{ user.last_login }}</td>
+    </tr>
+</table>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+<div class='container'>
+<div class='row text-center'>
+<div clsas='col-sm-6 col-sm-offset-3'>
+<h1>Lists</h1>
+<a href='{% url "companies:index" %}' class="btn btn-primary">Home</a>
+{% if request.user.is_authenticated %}
+<a href='{% url "companies:companies" %}' class="btn btn-primary">Companies</a>
+<a href='{% url "companies:users" %}' class="btn btn-primary">Users</a>
+<a href='{% url "logout" %}' class="btn btn-danger">Logout</a>
+{% endif %}
+</div>
+</div>
+
+</div><hr/>

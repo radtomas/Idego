@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Users</h1>
+
+<a href='{% url "companies:user-add" %}' class="btn btn-primary">Add User</a>
+
+<ol>
+{% for obj in object_list %}
+    <li><a href='{% url "companies:user-detail" pk=obj.id %}'>{{ obj.username }}</a></li>
+{% endfor %}
+</ol>
+
+
+{% endblock %}
