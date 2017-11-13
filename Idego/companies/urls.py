@@ -8,7 +8,7 @@ from .views import (
     UsersDetailView,
     UsersCreateView,
     UsersEditView,
-    UsersDeleteView
+    UsersDeleteView,
 )
 
 urlpatterns = [

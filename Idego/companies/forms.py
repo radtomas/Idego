@@ -30,7 +30,6 @@ class UserEditForm(UserChangeForm):
 
         fields = [
             'username',
-            'password',
             'first_name',
             'last_name',
             'email',
@@ -39,3 +38,4 @@ class UserEditForm(UserChangeForm):
             'is_staff',
             'is_active'
         ]
+
